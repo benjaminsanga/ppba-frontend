@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+#LUTRICS EYE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./client/public/logo.png" width="400" height="400" >
 
-## Available Scripts
+Lutrics eye is a web-based application, which enables prompt and easy reporting of
+events and activities such as drug abuse, GBV, security issues, and inter-faith relations.
 
-In the project directory, you can run:
+## Built with
+- [ReactJs](https://github.com/facebook/react/)
+- [NodeJS](https://github.com/nodejs/node)
+- [Bootstrap](https://github.com/twbs/bootstrap)
+- [MySQL](https://dev.mysql.com/doc/)
+ 
+## DEVELOPMENT
+### Requirements
+Windows/Linux/Mac with the following installed
+- [NodeJS >v12](https://nodejs.org/en/download/)
+- [MySQL](https://www.mysql.com/downloads/)
+- [git](https://git-scm.com/downloads)
+ 
+### Install Dependencies
+ Clone GitHub repo
+ ```bash
+ git clone github.com/lutricseye
+ ```
+#### Server
+ Switch to project directory and install dependencies
+ ```bash
+ cd lutricseye
+ npm install
+ ```
+#### Client
+ Switch to client directory and install dependencies
+ ```bash
+ cd ./client
+ npm install
+ ```
+#### Development server
+ From project directory (./LutricsEye) run:
+ ```
+ npm start-all
+ ```
+ For only client(front-end) dev, run
+ ```bash 
+ cd ./client
+ npm start
+ ```
+ For only server/backend dev, from project directory run
+ ```
+ npm start
+ ```
+### Frontend Production build
+ ```bash
+ cd ./client
+ npm build
+ ```
+- The compiled build will be stored at `./LutricsEye/client/build/`
 
-### `npm start`
+## Contributors
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Benjamin Sanga](https://github.com/benjaminsanga)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Joseph Chimebuka](https://github.com/josephchimebuka)
 
-### `npm test`
+[Jereh Lomak](https://github.com/jerehlomak)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Nengak Dakup](https://github.com/NengakDakup)
 
-### `npm run build`
+[Martins Brengshak](https://github.com/Martinsbane)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For guides on how to contribute, [visit here](./contributing.md)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Product of [Netaccess Foundation](http://netaccessfoundation.org/) 💚💚💚
