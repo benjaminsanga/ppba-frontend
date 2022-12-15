@@ -133,3 +133,22 @@ exports.getActivities = (req, res) => {
 
     // return res.status(200).json({message: 'Data fetched', data: {"activities": activities}})
 }
+
+exports.getOrganizations = (req, res) => {
+    const organizations = Organization.findAll({
+        attributes: [
+            'nameOfOrganization', 
+            'yearOfEstablishment', 
+            'thematicAreas', 
+            'address', 
+            'email',
+            'contact',
+            'registrationStatus'
+        ]
+    }).then(function(all_organizations){
+        console.log(all_organizations);
+        res.send({ error: false, message: 'users list', data: all_organizations });
+    }).catch(function(err){
+        console.log('Oops! something went wrong, : ', err);
+    });;
+}

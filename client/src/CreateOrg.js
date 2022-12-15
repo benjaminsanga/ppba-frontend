@@ -50,7 +50,7 @@ const CreateOrg = () => {
       .then(response => response.json())
       .then(result => {
         if (result.message === "Organization Created") {
-          setMessage("Organization submissions successful")
+          setMessage("Organization submission successful")
         }
         console.log(result)
       })
