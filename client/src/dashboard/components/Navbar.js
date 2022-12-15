@@ -4,7 +4,7 @@ import {AiOutlineMenuUnfold,AiOutlineCaretDown} from 'react-icons/ai'
 import {FaUserCircle} from 'react-icons/fa'
 import logo from "../assets/images/lutrics-eye-logo.png"
 // import {useDispatch, useSelector} from 'react-redux'
-import { toggleSidebarOpen, logoutUser } from '../features/user/userSlice'
+// import { toggleSidebarOpen, logoutUser } from '../features/user/userSlice'
 import { useNavigate } from 'react-router'
 
 const Navbar = () => {

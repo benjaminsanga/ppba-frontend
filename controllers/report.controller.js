@@ -3,10 +3,12 @@ const db = require('../models')
 
 const Report = db.report
 const Activity = db.activity
+const Organization = db.organization
 const Op = db.Sequelize.Op
 
 const ReportValidator = require('../validators/report.validator.js')
 const ActivityValidator = require('../validators/activity.validator.js')
+const OrganizationValidator = require('../validators/organization.validator.js')
 
 // Report Security Alert Incident
 exports.securityAlert = async (req, res) => {
@@ -84,6 +86,32 @@ exports.activity = async (req, res) => {
     try {
         let newReport = await Activity.create(reportData);
         return res.status(200).json({ message: "Activity Created", data: {} });
+    } catch (err) {
+        if (err.errors)
+            return res
+            .status(400)
+            .json({ message: err.errors[0].message, data: err.errors });
+        return res.status(500).json({ message: err.message, data: {} });
+    }
+}
+
+// Create Organization
+exports.organization = async (req, res) => {
+    const organizationData = req.body;
+    
+    const {value, error} = OrganizationValidator.validate(organizationData);
+    if (error)
+    return res
+      .status(400)
+      .json({
+        message: "Please fill all required fields",
+        data: error.details,
+      });
+    
+    // save user to db
+    try {
+        let newReport = await Organization.create(organizationData);
+        return res.status(200).json({ message: "Organization Created", data: {} });
     } catch (err) {
         if (err.errors)
             return res
