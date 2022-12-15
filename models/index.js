@@ -18,5 +18,6 @@ db.sequelizeConfig = sequelizeConfig;
 db.user = require("./user.model.js")(sequelizeConfig, Sequelize);
 db.report = require("./report.model.js")(sequelizeConfig, Sequelize);
 db.activity = require("./activity.model.js")(sequelizeConfig, Sequelize);
+db.organization = require("./organization.model.js")(sequelizeConfig, Sequelize);
 db.notification = require("./notications.model.js")(sequelizeConfig, Sequelize);
 module.exports = db;

@@ -8,7 +8,7 @@ const FormRow = ({name, value, handleChange, labelText, type}) => {
       className='form-control'
       name={name}
       value={value}
-      onChange={handleChange}
+      onChange={(e) => handleChange(e.target.value)}
       />
     </>
   )
