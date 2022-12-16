@@ -11,9 +11,7 @@ function SharedLayout() {
       <BigSidebar/>
       <div>
         <Navbar/>
-        <div>
-          <Outlet/>
-        </div>
+        <Outlet/>
       </div>
     </main>
    </Wrapper>

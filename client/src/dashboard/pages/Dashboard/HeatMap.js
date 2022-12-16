@@ -1,13 +1,13 @@
 import React from 'react'
 import { FeatureGroup, LayerGroup, Circle, Popup, Rectangle, TileLayer, MapContainer } from 'react-leaflet'
 // import PlateauMap from '../../assets/images/plateau-map.png'
-
+// 9.2182, 9.5179
 function HeatMap() {
 
-  const center = [51.505, -0.09]
+  const center = [9.2182, 9.5179]
   const rectangle = [
-    [51.49, -0.08],
-    [51.5, -0.06],
+    [9.1, 9.4],
+    [9.2, 9.48],
   ]
 
   const fillBlueOptions = { fillColor: 'blue' }
@@ -16,7 +16,7 @@ function HeatMap() {
   const purpleOptions = { color: 'purple' }
 
   return (
-    <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={center} zoom={10} scrollWheelZoom={false} style={{height: '80%', width: '90%', margin: '30px'}}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -26,37 +26,24 @@ function HeatMap() {
         <Circle
           center={center}
           pathOptions={fillRedOptions}
-          radius={100}
+          radius={200}
           stroke={false}
         />
         <LayerGroup>
           <Circle
-            center={[51.51, -0.08]}
+            center={[9.2852, 9.50]}
             pathOptions={greenOptions}
-            radius={100}
+            radius={500}
           />
         </LayerGroup>
       </LayerGroup>
       <FeatureGroup pathOptions={purpleOptions}>
-        <Popup>Popup in FeatureGroup</Popup>
-        <Circle center={[51.51, -0.06]} radius={200} />
+        <Popup>Area of Activity</Popup>
+        <Circle center={[9.3, 9.6]} radius={2000} />
         <Rectangle bounds={rectangle} />
       </FeatureGroup>
     </MapContainer>
   )
-  //  <div>
-  //     <MapContainer center={[9.2182, 9.5179]} zoom={13} scrollWheelZoom={false}>
-  //       <TileLayer
-  //         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  //         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  //       />
-  //       <Marker position={[9.2182, 9.5179]}>
-  //         <Popup>
-  //           A pretty CSS3 popup. <br /> Easily customizable.
-  //         </Popup>
-  //       </Marker>
-  //     </MapContainer>
-  //   </div>
 }
 
 export default HeatMap
