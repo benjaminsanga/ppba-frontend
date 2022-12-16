@@ -3,7 +3,7 @@ import Wrapper from '../../assets/wrappers/StatsContainer'
 import StatItem from './StatItem'
 import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa';
 // import styled from 'styled-components'
-import { getOrganizations } from '../../api/calls';
+import { getActivityReports, getOrganizations } from '../../api/calls';
 import { useEffect, useState } from 'react';
 
 const style = {
@@ -12,33 +12,35 @@ const style = {
   }
 }
 
-const defaultStat=[
-  {
-    title: 'Number of reports made',
-    color: '#e9b949',
-    count: '0',
-    icon: <FaSuitcaseRolling />
-  },
-  {
-    title: 'Responded reports',
-    color: '#647acb',
-    count: '0',
-    icon: <FaCalendarCheck />
-  }, {
-    title: 'Pending reports',
-    color: '#d66a6a',
-    count: '0',
-    icon: <FaBug />
-  }
-]
-
 function Home() {
 
   const [organizations, setOrganizations] = useState([])
+  const [activities, setActivities] = useState([])
 
   useEffect(() => {
     getOrganizations().then(data=>setOrganizations(data)).catch(err=>console.log(err))
+    getActivityReports().then(data=>setActivities(data)).catch(err=>console.log(err))
   }, []) 
+
+  const defaultStat=[
+    {
+      title: 'Number of Organizations',
+      color: '#e9b949',
+      count: organizations.length,
+      icon: <FaSuitcaseRolling />
+    },
+    {
+      title: 'Number of Activities',
+      color: '#647acb',
+      count: activities.length,
+      icon: <FaCalendarCheck />
+    }, {
+      title: 'Pending reports',
+      color: '#d66a6a',
+      count: '0',
+      icon: <FaBug />
+    }
+  ]
 
   console.log(organizations)
 

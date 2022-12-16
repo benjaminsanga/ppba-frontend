@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import FormRow from './FormRow'
 
 const CreateOrg = () => {
-
   
   const [nameOfOrganization, setNameOfOrganization] = useState("")
   const [yearOfEstablishment, setYearOfEstablishment] = useState("")
@@ -51,6 +50,13 @@ const CreateOrg = () => {
       .then(result => {
         if (result.message === "Organization Created") {
           setMessage("Organization submission successful")
+          setNameOfOrganization("")
+          setYearOfEstablishment("")
+          setThematicAreas("")
+          setAddress("")
+          setContact("")
+          setEmail("")
+          setRegistrationStatus("")
         }
         console.log(result)
       })

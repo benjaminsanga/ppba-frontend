@@ -24,11 +24,11 @@ const Report = () => {
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-      "donorAgency": "agency",
-      "projectTitle": "project title",
-      "projectDuration": "project duration",
-      "projectLGAs": "project lgas",
-      "areaOfIntervention": "area of intervention"
+      donorAgency, 
+      projectTitle, 
+      projectDuration, 
+      projectLGAs, 
+      areaOfIntervention
     });
 
     var requestOptions = {
@@ -43,6 +43,11 @@ const Report = () => {
       .then(result => {
         if (result.message === "Activity Created") {
           setMessage("Activity submissions successful")
+          setDonorAgency("")
+          setProjectTitle("")
+          setProjectDuration("")
+          setProjectLGAs("")
+          setAreaOfIntervention("")
         }
         console.log(result)
       })
